@@ -1,39 +1,47 @@
 module.export = (sequelize) => {
-    sequelize.define("county",{
-        id:{
+    sequelize.define("county", {
+        id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
-            allowNull:false,
-            primaryKey:true
+            allowNull: false,
+            primaryKey: true
         },
-        name:{
-            type:DataTypes.STRING,
-            allowNull:false,
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
-        image:{
-            type:DataTypes.STRING,
+        flagImage: {
+            type: DataTypes.BLOB,
+            allowNull: false
         },
 
-        continent:{
+        continent: {
+            type: DataTypes.STRING,
+            allowNull: false
 
         },
-        capital:{
+        capital: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        subregion: {
+            type: DataTypes.STRING
 
         },
-        subregion:{
+        area: {
+            type: DataTypes.FLOAT
 
         },
-        area:{
-
-        },
-        population:{
+        population: {
+            type: DataTypes.INTEGER,
+            allowNull: false
 
         }
 
 
     }
 
-    )}
-    
+    )
+}
 
-   
+
