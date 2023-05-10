@@ -1,5 +1,5 @@
 
-const countriesRouter = require('')
+const countriesRouter = require('./countries.router')
 function routerApi(app) {
     const router = express.Router()
     router.use('/countries', countriesRouter)
