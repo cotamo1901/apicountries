@@ -1,4 +1,6 @@
-const { pokemon } = require("../db");
+const { ValidationErrorItemType } = require("sequelize");
+const { Pokemon } = require("../db");
+require("dotenv").config();
 const URL_API = process.env.URL_API;
 
 async function getCountryApi() {
@@ -7,8 +9,18 @@ async function getCountryApi() {
   data = data.map((country) => ({
     id: country.id,
   }));
+  return data;
 }
 
+const getDbData = async () => {
+  try {
+    const countrydb = await Pokemon.findAll({});
+    return countrydb;
+  } catch (error) {
+    console.log(error);
+  }
+};
 module.exports = {
   getCountryApi,
+  getDbData,
 };
