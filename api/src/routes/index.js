@@ -1,10 +1,10 @@
-const express = require('express');
+const {Router} = require('express')
 
-const countriesRouter = require("./countries.router");
+const countries = require("./countries.router");
 
-function routerApi(app) {
-  const router = express.Router();
-  router.use("/countries", countriesRouter);
-}
+const router = Router()
 
-module.exports = routerApi;
+router.use('/countries',countries)
+
+
+module.exports=router;
